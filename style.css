@@ -1,0 +1,76 @@
+body{
+    background-color: #292929;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+.seat{
+    background-color: #444451;
+    height: 15px;
+    width: 15px;
+    margin: 3px;
+    border-radius: 5px;
+}
+/* 
+Bu CSS kodu, ".seat" sınıfına sahip, ".reserved" sınıfına sahip olmayan ve üzerine gelindiğinde geçerli olacak olan öğeleri hedefler. */
+.seat:not(.reserved):hover{
+    cursor: pointer;
+
+    /* CSS'de scale() işlevi, bir öğenin boyutunu orantılı olarak büyütmek veya küçültmek için kullanılır.
+     Bu CSS kodu, öğeyi orantılı olarak 1.3 kat büyütür. */
+    transform: scale(1.3);
+}
+.seat.selected{
+    background-color: #f6eb6f;
+}
+.seat.reserved{
+    background-color: #fff;
+}
+.row{
+    display: flex;
+}
+
+/* 
+nth-of-type() CSS seçicisi, belirli bir öğe türündeki belirli bir sıra numarasına sahip öğeleri seçmek için kullanılan bir seçicidir.
+ChatGPT
+nth-of-type(2), belirli bir öğe türündeki ikinci öğeyi seçmek için kullanılan bir CSS seçicisidir.
+ */
+.seat:nth-of-type(2){
+    margin-right: 20px;
+}
+
+/* 
+nth-last-of-type() CSS seçicisi, belirli bir öğe türündeki öğeler arasında sondan belirli bir sıra numarasına sahip öğeleri seçmek için kullanılır.
+ */
+.seat:nth-last-of-type(3){
+    margin-right: 20px;
+}
+.screen{
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.7);
+}
+.movie-list{
+    margin: 20px 0;
+}
+.info{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    color: #777;
+    display: flex;
+}
+ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+p.text span {
+    color: #f6eb6f;
+}
